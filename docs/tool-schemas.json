@@ -1,0 +1,109 @@
+[
+  {
+    "name": "get-documentation",
+    "jsonSchema": {
+      "type": "object",
+      "properties": {
+        "scope": {
+          "type": "string",
+          "default": "document"
+        },
+        "sheetIds": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer"
+          },
+          "default": null
+        },
+        "viewIds": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer"
+          },
+          "default": null
+        },
+        "documentSession": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "includeTemplates": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    }
+  },
+  {
+    "name": "get-documentation-elements",
+    "jsonSchema": {
+      "type": "object",
+      "properties": {
+        "scope": {
+          "type": "string",
+          "default": "document"
+        },
+        "sheetIds": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer"
+          },
+          "default": null
+        },
+        "viewIds": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer"
+          },
+          "default": null
+        },
+        "documentSession": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "includeTemplates": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    }
+  },
+  {
+    "name": "create-documentation-elements-report",
+    "jsonSchema": {
+      "type": "object",
+      "properties": {
+        "filePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "filePath"
+      ]
+    }
+  },
+  {
+    "name": "revit-documentation-ping",
+    "jsonSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  }
+]
