@@ -15,7 +15,7 @@ var options = new McpServerOptions
         McpServerTool.Create(queries.PingAsync, new() { Name = "revit-documentation-ping", Description = "Проверяет доступность общего Revit bridge." }),
         McpServerTool.Create(pipeline.GetElementsAsync, new() { Name = "get-documentation-elements", Description = "Получает листы, виды, размещения, аннотации и системные параметры; сохраняет общее состояние в один JSON." }),
         McpServerTool.Create(report.CreateAsync, new() { Name = "create-documentation-elements-report", Description = "Создаёт автономный HTML в стиле BIM-S из сохранённого JSON, без Revit." }),
-        McpServerTool.Create(pipeline.GetDocumentationAsync, new() { Name = "get-documentation", Description = "Последовательно создаёт JSON документации и HTML-отчёт; возвращает пути к обоим файлам." })
+        McpServerTool.Create(pipeline.GetDocumentationAsync, new() { Name = "get-documentation", Description = "Получает текущее состояние документации Revit, сохраняет новый snapshot JSON и HTML, возвращает snapshot в StructuredContent. Для текущего состояния достаточно этого инструмента. Для изменений во времени сначала вызовите его, затем сравните previous/latest через MCP3 с mode=2d. Сам по себе изменения не определяет." })
     ]
 };
 using var shutdown = new CancellationTokenSource();

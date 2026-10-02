@@ -57,6 +57,8 @@ public sealed class DocumentationPipeline(DocumentationQueries queries, Document
             var data = (JsonObject)saved.DeepClone();
             data.Remove("filePath");
             data["jsonPath"] = jsonPath; data["htmlPath"] = htmlPath;
+            data["snapshot"] = DocumentationData.Object(
+                await File.ReadAllTextAsync(jsonPath, cancellationToken));
             return DocumentationData.Result(data,
                 $"Статус: complete; обработано: {saved["processedElementCount"]}; JSON: {jsonPath}; HTML: {htmlPath}");
         });
